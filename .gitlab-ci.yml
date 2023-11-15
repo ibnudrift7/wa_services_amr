@@ -1,0 +1,85 @@
+variables:
+  DOCKER_REGISTRY: 461617192451.dkr.ecr.ap-southeast-1.amazonaws.com
+  AWS_DEFAULT_REGION: ap-southeast-1
+  DOCKER_HOST: tcp://docker:2375
+  CI_PIPELINE_IID: v1
+  APP_NAME_DEV: midtrans-dev
+  APP_NAME_PROD: midtrans-prod
+  CLUSTER_NAME_DEV: social-bread-dev
+  CLUSTER_NAME_PROD: social-bread-prod
+  CLUSTER_SERVER_DEV: https://04BED52A410BEAEFB4E132CA4713DD0E.yl4.ap-southeast-1.eks.amazonaws.com
+  CLUSTER_SERVER_PROD: https://1F193EEDEA076ED3E8C0EA8975DB0E8B.gr7.ap-southeast-1.eks.amazonaws.com
+  CERTIFICATE_AUTORITY_DATA_DEV: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM1ekNDQWMrZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeU1ETXhNVEF5TkRVeU5Gb1hEVE15TURNd09EQXlORFV5TkZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBS1RyCnc5VG1IY24xMzlqb05Vb24vMkd3Vk5WZitaNlJHRThyc0JLcFlBTUhwOFc5dllBQ0VobnFsZ01ldzZVOFhnWUsKZUtzSVB1WXlUWmxXY2JhZTMvNmxGV25TdEd2cWU0VVVoallOVElEN1h0blZUci9meVpTME9lM092NDEwdXY3OQo0cEtjMmF0amhSK1lEYXF2Tm44aHJ2Q2UwWjlPY25pTWx3SEtPQ2YvY1MyTmg1TXdYMFFaQTFEakFPLzVIM2FQCnhQc3pNdTlNcG1JRGdRcCsyVjkrbUhBUFYyOVN1U3JoRUVYNkRXZFA3RHRCWXhGTHFYM0ZPak5zR3NVUlFuTzIKNjYyYU9HcDNtQXRYZkVjcUZXcmloNmUyaGVFV1ZldXhiZm5VVHRlenFmYVJvTENvN1dFR0JaQldsenVWV09pQwpscTdQL1A0dm5sTG5TTkd6K0VjQ0F3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZHYzd0Szdvam5YMVI4MFg5OTlXZkFHRHRNbnRNQTBHQ1NxR1NJYjMKRFFFQkN3VUFBNElCQVFBOWs3cE81TVBxclVPeVZEL3dIUEtrUm02M3YyMjVXZ1k3VndnU09Yak84WEtJd2czZAowWmZWKzdEcDA1RjgyN0gwQXpKNHVBZ0I2OEw2RDBqRmdGZStaQ3hjVVRHQTBmU2YzYXNWQUZsTDQxYU9QNGJtCjk4UGZITnJReHphZ29uMDdmZ0ZtZ0JSZFNKTkxQTXBiZTE4NE5EMDYxcWZhVm9TR2FmdDM4Yk12cmVqeS8zd0EKUVR6d21ZczY2OUtoTXNFU0t6L2RyMGFUaXZubUpMbSt3VVFiamd0dm5kUkwyU0h3aWltbnpsbUUyNmFNaUhCSApOTUZIR1F4U0tIZHNoZ2ovcCt3QUM2MG9RNVNkcU1wZEV6UkJOcnh5dUd0MC8yYi90ejREOHh2eWovZU1uTlp6Ci9LQkpXbmRHd0RHSHlmSEFIWXZrNktYUXFSR3A5MTN2bTI5KwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+  CERTIFICATE_AUTORITY_DATA_PROD: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM1ekNDQWMrZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeU1ETXhNVEF5TURBeU1Gb1hEVE15TURNd09EQXlNREF5TUZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTC9lCk5MOTRqclFsZUNlNTNVR3p4SGpXellvS2pmSnFIVG9BMHhEdFRlakpLaW9sSnBTaWtISjBvYkVaaDNhUzR5cEoKMm0zZk9Tb3JwUFpwSlVEbnF0L0luSUh0eDVxZHhaM0tXeVVLY0ptbXJERmdYazRLZ00zUFV0amM0SkxjanpyUwpOQ1FvZDVxbm5KWXphb3FWc29leUZ5TUpzK1VVOTFKNWRVcm83QmUzdTArclFSdzNMaGx0dFBsOU9iekxDVDF0CmpEL3JFVW0rc0lBUGl5NndNVi9keUZJenpzR1FKS05CVCtzV1JRYkx1ekVucWVYYzhMZ1l1V05TK1FqWFdPMFkKTTRjKzZkNmNmblVneTBMaFFKc09GcW9SNWM5MkhXS2dZSjNLVjRpNFc3bUJMUXRKcUgvQ21mTGNKY0E1RE9rdgpkdFp2RkZlUWhNcHUvTTN4dVAwQ0F3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZBWUp5MVBUWjNXRzJHQTBlSHdIeHN5Ynh4QnVNQTBHQ1NxR1NJYjMKRFFFQkN3VUFBNElCQVFBL29nemxYeGVZYmh2TEQ5NzZOQklQSzRJSnNFcC9DdzlLcWx2dHNmZmFub213U210VApmRW90ektQYi90ODVrL1IrRXlGbXAyd1VyeXBzUXc1QXAzQStMRis4OHRLZGdvNUJVZ1EvUFRHOStyelZmQnVrCit6RjMrTjZwNUp6amNRWU41bUI4YmxkRnlNQktIM0EvSFNMaEZ4ZFdweGtZZ1N0cmdMczVwNkNsTWFSZUVPVjUKUjBBWVlUVzIvQkhCWS9LcFEweTg0c3lmK1BJZmE5TDhOdEtubWJhZ3VJVjlzY3RoVk5YZzJaN1BxR05UaElFVwp3OE53K3dJTEVCOVcva1hUM3hNdGttQU5zYk1uR0QvMFMvZ3FEYmlVZUI1TFJoRHppMldlNDJCVTErUVJOZThiClRkVSs3ZVVmM2hGWmh3WENGbi8wMHpBbG03OUtIY1BTaEwydgotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+
+stages:
+  - build
+  - deploy
+
+build_dev:
+  stage: build
+  only: 
+    - development
+  image: 
+    name: amazon/aws-cli
+    entrypoint: [""]
+  services:
+    - docker:dind
+  before_script:
+    - amazon-linux-extras install docker
+    - aws --version
+    - docker --version
+  script:
+    - docker build -t $DOCKER_REGISTRY/$APP_NAME_DEV:$CI_PIPELINE_IID . 
+    - aws ecr get-login-password | docker login --username AWS --password-stdin $DOCKER_REGISTRY
+    - docker push $DOCKER_REGISTRY/$APP_NAME_DEV:$CI_PIPELINE_IID
+
+build_prod:
+  stage: build
+  only: 
+    - main
+  image: 
+    name: amazon/aws-cli
+    entrypoint: [""]
+  services:
+    - docker:dind
+  before_script:
+    - amazon-linux-extras install docker
+    - aws --version
+    - docker --version
+  script:
+    - docker build -t $DOCKER_REGISTRY/$APP_NAME_PROD:$CI_PIPELINE_IID . 
+    - aws ecr get-login-password | docker login --username AWS --password-stdin $DOCKER_REGISTRY
+    - docker push $DOCKER_REGISTRY/$APP_NAME_PROD:$CI_PIPELINE_IID
+
+deploy_dev:
+  stage: deploy
+  only: 
+    - development
+  image: 
+    name: bearengineer/awscli-kubectl
+  before_script:
+    - kubectl config set-cluster eks --server $CLUSTER_SERVER_DEV
+    - kubectl config set clusters.eks.certificate-authority-data $CERTIFICATE_AUTORITY_DATA_DEV
+    - kubectl config set-credentials user --exec-command aws --exec-api-version client.authentication.k8s.io/v1alpha1 --exec-arg "--region" --exec-arg ap-southeast-1 --exec-arg eks --exec-arg get-token --exec-arg "--cluster-name" --exec-arg $CLUSTER_NAME_DEV
+    - kubectl config set-context eks --cluster=eks
+    - kubectl config set-context eks --user=user
+    - kubectl config use-context eks
+  script:
+    - kubectl rollout restart deployment/$APP_NAME_DEV
+
+deploy_prod:
+  stage: deploy
+  only: 
+    - main
+  image: 
+    name: bearengineer/awscli-kubectl
+  before_script:
+    - kubectl config set-cluster eks --server $CLUSTER_SERVER_PROD
+    - kubectl config set clusters.eks.certificate-authority-data $CERTIFICATE_AUTORITY_DATA_PROD
+    - kubectl config set-credentials user --exec-command aws --exec-api-version client.authentication.k8s.io/v1alpha1 --exec-arg "--region" --exec-arg ap-southeast-1 --exec-arg eks --exec-arg get-token --exec-arg "--cluster-name" --exec-arg $CLUSTER_NAME_PROD
+    - kubectl config set-context eks --cluster=eks
+    - kubectl config set-context eks --user=user
+    - kubectl config use-context eks
+  script:
+    - kubectl rollout restart deployment/$APP_NAME_PROD

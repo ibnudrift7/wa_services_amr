@@ -1,0 +1,7 @@
+
+/**
+ * core client
+ *
+ * @type {CoreApi}
+ */
+
